@@ -1,11 +1,7 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
+
 /* 
-    Created on : Jun 24, 2016, 5:25:04 PM
-    Author     : Victor
+    Author     : Victor Reyes
+victor@inblackbird.com
 */
 
 html {
@@ -21,6 +17,7 @@ body{
   //  padding-bottom:45px;
   //  margin-bottom: 45px;
    //  width: 100%;
+   line-height:1.12;
 }
 
 .menu_main_redrock{
@@ -30,7 +27,7 @@ body{
   transform: translateY(0%);
   width: 100%;
    margin: 0px;
-   padding: 0px;
+ // padding: 0px;
 }
 
 
@@ -77,6 +74,7 @@ body{
 .navbar .navbar-nav {
     display: inline-block;
     float: none;
+    margin: 0px;
 }
 
 .navbar .navbar-collapse {
@@ -96,7 +94,7 @@ body{
     width: 50%;
      float: left;
      border-right: white thin solid;
-     margin-top: 2%;
+     margin-top: 1%;
   
 }
 
@@ -107,15 +105,16 @@ body{
 }
 
 .navbar-nav li a{
-    height: 80px;
-   padding-top: 30px;
+    height: 70px;
+    width: 100%;
+   padding-top: 25px;
     color: rgb(255, 255, 255) !important;
 }
 
 .nav>li>a:focus, .nav>li>a:hover{
    color: rgb(255, 0, 0) !important;
   // text-decoration: underline;
-
+border-bottom: red thin solid;
     background-color: rgba(0, 0, 0, 0.6)  !important;
 }
 
@@ -162,15 +161,167 @@ body{
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
- display: flex;
+ //display: flex;
  justify-content: center;
  align-items: center;
  width: 98%;
  //height: auto;
- padding-bottom: 10px;
+ //padding-bottom: 10px;
  background-color: rgba(0, 0, 0, 0.8);
  color: #fff;
 }
+
+
+
+
+
+/*
+Elements 
+*/
+
+
+
+.eventbox01{
+    border: red thin solid;
+    float: left;
+    width: 98%;
+    padding: 10px;
+    margin: 20px;
+   
+}
+
+.event_star{
+    float: right;
+    width: 100%;
+}
+
+
+
+.event_star .estrellita{
+    position: relative;
+   top:-35px;
+   right: -40px;
+    float: right;
+    width: 60px;
+}
+
+.event_title{
+    font-size: 1.5em;
+    font-weight: bold;
+    float: right;
+    width: 100%;
+    text-align: right;
+}
+
+.event_date{
+    font-size: 1em;
+    margin-top: 5px;
+     float: right;
+    width: 100%;
+    text-align: right;
+}
+
+
+
+.beerbox01{
+    border: red thin solid;
+    //float: left;
+    width: 70%;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.beer_img{
+    width: 100%;
+     float: left;
+     text-align: center;
+}
+
+.beer_img img{
+    border: red thin solid;
+    margin-left: auto;
+    margin-right: auto;
+   margin-top: 10px;
+    margin-bottom: 10px;
+    width: 130px;
+}
+.beer_title{
+    font-size: 1.5em;
+    font-weight: bold;
+    float: left;
+    width: 100%;
+    padding-left: 10px;
+}
+
+.beer_info_q{
+     padding-left: 10px;
+}
+
+.beer_info_h{
+     padding-left: 10px;
+}
+
+.beer_brw{
+     float: left;
+    width: 100%;
+     padding-left: 10px;
+}
+
+
+
+
+
+
+
+/*buttons*/
+
+
+.buttonbox01{
+    border: red thin solid;
+    float: left;
+    width: 98%;
+    padding: 10px;
+    margin: 20px;
+   
+}
+
+.button_star{
+    float: right;
+    width: 100%;
+    height: 25px;
+}
+
+
+
+.button_star .estrellita{
+    position: relative;
+   top:-35px;
+   right: -40px;
+    float: right;
+    width: 60px;
+}
+
+.button_title{
+    font-size: 1.5em;
+    font-weight: bold;
+    float: right;
+    width: 100%;
+    text-align: right;
+}
+
+.button_action{
+    font-size: 1em;
+    margin-top: 5px;
+     float: right;
+    width: 100%;
+    text-align: right;
+}
+
+
 
 
 
@@ -241,6 +392,19 @@ body{
     font-size: 16px;
     font-weight: bold;
 }
+
+
+/*general form*/
+
+.rounded3 iframe{
+    border: red thin solid !important;
+}
+
+h4 {
+    padding-top: 10px;
+}
+
+
 
 
 /* ---------------------------------------------------*/
@@ -384,6 +548,11 @@ body{
    padding-right: 20px;
  
 }
+
+.rounded3 iframe{
+    width: 500px;
+}
+
 
 	}
         

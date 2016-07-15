@@ -39,7 +39,7 @@ if ( $wp_query->have_posts() ) {
 ?>
 
 <div class="row">
-  <div class="col-sm-6 col-sm-offset-3">             
+  <div class="col-sm-8 col-sm-offset-2">             
 		<div class="rr_box_02 container-fluid">
       <nav class="navbar navbar-inverse bg ">
         <div class="container-fluid">

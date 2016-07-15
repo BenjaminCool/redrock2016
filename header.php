@@ -38,19 +38,21 @@
 			?>
 			<div class="row" id="menuback">
 				
-				<div class="col-sm-6 col-sm-offset-3">
+				<div class="col-xs-12 col-lg-10 col-lg-offset-1 col-xl-8 col-xl-offset-2">
 				 
-					<div class="branded" >
+					<div class="col-md-5">
 							 <?php
 
 								echo '<a href="'.$home_url.'" title="';
 								bloginfo('description');
-								echo '"><img src="'.$mods['red-rock-logo'].'" alt="';
+								echo '"><img class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-12" src="'.$mods['red-rock-logo'].'" alt="';
 								bloginfo('name');
 								echo '" /></a>';
 
 							?>
 					</div>
+					
+					<div class="col-md-7">
 														
 					<nav class="navbar navbar-inverse bg ">
 						<div class="container-fluid">
@@ -78,6 +80,7 @@
 		
 						</div><!--/.container-fluid -->
 					</nav>
+					</div>
 				</div>
 				
 			</div>

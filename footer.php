@@ -1,58 +1,35 @@
-	<footer>
-	
-		<?php if (is_active_sidebar('footer-col-1') || is_active_sidebar('footer-col-2') || is_active_sidebar('footer-col-3')) { ?>
-		
-		<div class="wrapper wrapper-footer">
-		
-			<div class="academia-column academia-column-1">
-				
-				<?php
-				if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Footer: Column 1') ) : ?> <?php endif;
-				?>
-				
-				<div class="cleaner">&nbsp;</div>
-			</div><!-- .academia-column .academia-column-1 -->
-
-			<div class="academia-column academia-column-2">
-				
-				<?php
-				if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Footer: Column 2') ) : ?> <?php endif;
-				?>
-				
-				<div class="cleaner">&nbsp;</div>
-			</div><!-- .academia-column .academia-column-1 -->
-
-			<div class="academia-column academia-column-3">
-				
-				<?php
-				if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Footer: Column 3') ) : ?> <?php endif;
-				?>
-				
-				<div class="cleaner">&nbsp;</div>
-			</div><!-- .academia-column .academia-column-1 -->
-
-			<div class="cleaner">&nbsp;</div>
-		
-		</div><!-- end .wrapper .wrapper-footer -->
-		
-		<?php } ?>
-
-		<div class="wrapper wrapper-copy">
-	
-			<?php $copyright_default = __('Copyright &copy; ','campus') . date("Y",time()) . ' ' . get_bloginfo('name') . '. ' . __('All Rights Reserved', 'campus'); ?>
-			<p class="copy"><?php echo esc_attr(get_theme_mod( 'academia_copyright_text', $copyright_default )); ?></p>
-	
-
-		</div><!-- .wrapper .wrapper-copy -->
-
-		
-	</footer>
-
-</div><!-- end #container -->
-
-<?php 
-wp_reset_query();
-wp_footer(); 
+<?php
+	$mods = get_theme_mods();
 ?>
-</body>
+		<footer class="footer ">
+      
+        <div class="footcenter">
+        
+        <p class="adressphone">  <img alt="location" src="<?php echo $mods['footer-location-icon'];  ?>">
+                 <?php echo $mods['footer-location-text'];  ?>
+        </p>
+        
+        <p class="footbut">
+        <?php
+        		$locations = get_nav_menu_locations();
+        
+        		$footer_nav_items = wp_get_nav_menu_items( $locations['footer_menu']);
+						foreach($footer_nav_items as $item){
+							echo "<a href=\"{$item->url}\">{$item->title}</a>";
+						}
+        
+//        	var_dump($footer_nav_items);
+        ?>
+        </p>      
+        
+        
+                 
+                 
+        </div>
+     
+    </footer>
+      
+		<?php wp_footer(); ?>
+    
+  </body>
 </html>

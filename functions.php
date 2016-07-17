@@ -69,6 +69,7 @@ class RedRockStyle {
     $this->add_image_to_customizer($wp_customize,'Global Banner');
     $this->add_image_to_customizer($wp_customize,'Red Rock Logo');
     $this->add_image_to_customizer($wp_customize,'Footer Location Icon');
+    $this->add_image_to_customizer($wp_customize,'Star Image');
     
     $this->add_text_to_customizer($wp_customize,'Footer Location Text');
     

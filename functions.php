@@ -24,9 +24,9 @@ class RedRockStyle {
 	
 	function add_active_nav_class($classes, $item, $args, $depth){
 		//echo json_encode($item);
-     if( $item->url == home_url().$_SERVER['REQUEST_URI'] ){
-             $classes[] = 'active ';
-     }
+     		if( $item->url == home_url().$_SERVER['REQUEST_URI'] ){
+             		$classes[] = 'active ';
+     		}
      return $classes;
 	}
   
@@ -50,7 +50,7 @@ class RedRockStyle {
 		}
 		wp_enqueue_script( 'bootstrap-js', get_stylesheet_directory_uri().'/js/bootstrap.min.js', array('jquery'), null, true );
 		wp_enqueue_script( 'tween-max', get_stylesheet_directory_uri().'/js/gsap/TweenMax.min.js', null, null, true );
-		wp_enqueue_script( 'main-js', get_stylesheet_directory_uri().'/js/mainjs.js', array('jquery','bootstrap-js'), null, true );
+		//wp_enqueue_script( 'main-js', get_stylesheet_directory_uri().'/js/mainjs.js', array('jquery','bootstrap-js'), null, true );
   }
   
 
@@ -68,6 +68,10 @@ class RedRockStyle {
 
     $this->add_image_to_customizer($wp_customize,'Global Banner');
     $this->add_image_to_customizer($wp_customize,'Red Rock Logo');
+    
+    $this->add_image_to_customizer($wp_customize,'Main Promo Image');
+    $this->add_image_to_customizer($wp_customize,'Watch Image');
+
     $this->add_image_to_customizer($wp_customize,'Footer Location Icon');
     $this->add_image_to_customizer($wp_customize,'Star Image');
     
@@ -77,6 +81,8 @@ class RedRockStyle {
     $this->add_text_to_customizer($wp_customize,'Hours 2');
     $this->add_text_to_customizer($wp_customize,'Hours 3');
   
+    $this->add_page_to_customizer($wp_customize,'Main Footer Link');
+
     register_nav_menus( 
     	array(
 				'footer_menu' => 'Footer Menu',
@@ -114,7 +120,25 @@ class RedRockStyle {
 					'section'  => 'red-rock',
 					'settings' => $slug,
 		)));
+
 		//$wp_customize->get_setting($slug)->transport = 'postMessage';
+	}
+
+
+	function add_page_to_customizer($wp_customize, $setting_name, $default = ""){
+		$slug = sanitize_title($setting_name);
+		$wp_customize->add_setting($slug,
+                        array(
+                                        'default'           => $default,
+                                        'capability'        => 'edit_theme_options'
+                        )
+                );
+		$wp_customize->add_control('themename_page_test', array(
+        		'label'      => __($setting_name, 'red-rock-2016'),
+        		'section'    => 'red-rock',
+        		'type'    => 'dropdown-pages',
+        		'settings'   => $slug,
+    		));
 	}
 
 	function add_banner_to_customizer(){

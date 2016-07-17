@@ -41,18 +41,18 @@ if ( $wp_query->have_posts() ) {
 <div class="row">
   <div class="col-sm-8 col-sm-offset-2">             
 		<div class="rr_box_02 container-fluid">
-      <nav class="navbar navbar-inverse bg ">
-        <div class="container-fluid">
-          <div class="navbar-header">
-             <a class="navbar-brand" href="/menu/">Menu</a>
-    			</div>
+      			<nav class="navbar navbar-inverse bg ">
+        			<div class="container-fluid">
+          				<div class="navbar-header">
+             					<a class="navbar-brand" href="/menu/">Menu</a>
+    					</div>
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar2" aria-expanded="false" aria-controls="navbar">
 						<span class="sr-only">Toggle navigation</span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>   
-        </div>
+        			</div>
           
 				<?php
 				
@@ -86,7 +86,7 @@ if ( $wp_query->have_posts() ) {
 								
 								<div class=\"col-xs-4\">
 											<h3>{$menu_item['name']}</h3>
-											<details open>{$menu_item['content']}</details>
+											<p>{$menu_item['content']}</p>
 								</div>									
 							";
 						}

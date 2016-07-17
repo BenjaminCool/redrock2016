@@ -10,7 +10,7 @@ class RedRockEventsTemplate {
     echo<<<HTML
 
 		<div class="row">
-			<div class="col-sm-6 col-sm-offset-3">
+			<div class="col-md-6 col-md-offset-3">
 				<div class="rr_box_02 container-fluid">
 					<div class="col-xs-12">
 
@@ -68,9 +68,6 @@ HTML;
 					
 					<div class="col-xs-4">
 						<div class="eventbox01">
-							<div class="event_star">
-								<img class="estrellita" alt="star" src="{$mods['star-image']}">
-							</div>
 							<div class="event_title"><a href="{$link}" rel="bookmark" title="{$name}">{$name}</a></div>
 							<div class="event_date">{$date}</div>
 						</div>

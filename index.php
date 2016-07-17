@@ -18,7 +18,7 @@ require_once 'header.php';
                     <div><p> Visit our beer menu, filled with
 Michigan and craft brews.</p></div>-->
 
-<img class="promoimg" src="http://local.wordpress.dev/wp-content/uploads/2016/07/promo-600-300x208.png" alt="promo-600"  style="transform: matrix(1, 0, 0, 1, 0, 0);" >
+<img class="promoimg" src="<?php echo $mods['main-promo-image'] ?>" alt="promo-600"  style="transform: matrix(1, 0, 0, 1, 0, 0);" >
                      
                  </div>
               </div>
@@ -28,7 +28,7 @@ Michigan and craft brews.</p></div>-->
 											<span id="horaid" class="hora" style="transform: matrix(1, 0, 0, 1, 0, 0);">
 												
 													<h2>Hours</h2>
-													<img id="homiewatch" src="http://local.wordpress.dev/wp-content/uploads/2016/07/watch.png" alt="watch" ></span>
+													<img id="homiewatch" src="<?php echo $mods['watch-image'] ?>" alt="watch" ></span>
 												
 											</span>
 											<span id="horatxtid" class="horatxt" style="transform: matrix(1, 0, 0, 1, 0, 0);">

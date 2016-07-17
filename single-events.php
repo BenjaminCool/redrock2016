@@ -1,19 +1,15 @@
 <?php get_header(); ?>
 
-<div id="content">
+<div class="container">
 	
-	<div class="wrapper wrapper-main">
-
-		<div id="main">
-		
-			<div class="wrapper-content">
+	<div class="rr_box_02">
 			
 				<?php 
 				
 				    while (have_posts()) : the_post(); 
 				
     				  $custom = get_post_custom();
-					    $date = new DateTime($custom['event_date'][0]);
+				  $date = new DateTime($custom['event_date'][0]);
                                   $date = $date->format('M d, Y');
                                   if(isset($custom['recurring'][0]) && $custom['recurring'][0] != 'Not Recurring'){
                                       $date = "<span>Every {$custom['recurring'][0]}</span>";
@@ -63,13 +59,11 @@
 
 			</div><!-- .wrapper-content -->
 		
-		</div><!-- #main -->
+	</div>
 		
 		<?php get_sidebar(); ?>
 		
 		<div class="cleaner">&nbsp;</div>
-	</div><!-- .wrapper .wrapper-main -->
-	
-</div><!-- #content -->
+</div>	
 
 <?php get_footer(); ?>

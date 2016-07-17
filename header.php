@@ -25,7 +25,6 @@
 
   <body <?php body_class(); ?> >
       
-		<div class="menu_main_redrock container" id="mainrr" style="position: static; transform: translateY(0px); width: 100%; top: 0px;">
 
 
 			<?php

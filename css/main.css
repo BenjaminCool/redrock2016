@@ -1,7 +1,7 @@
 
 /* 
     Author     : Victor Reyes
-victor@inblackbird.com
+    victor@inblackbird.com
 */
 
 html {
@@ -47,14 +47,14 @@ body{
     margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
- display: flex;
- justify-content: center;
- align-items: center;
- width: 90%;
- height: 300px;
- background-color: rgba(0, 0, 0, 0.8);
- color: #fff;
- overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    overflow: hidden;
 }
 
 
@@ -83,11 +83,10 @@ body{
 
 
 #menuback{
-  
     background-color: rgba(0, 0, 0, 0.6);
-     height: auto;
-     border: red solid thin  !important;
 }
+
+
 
 .branded{
     text-align: center;
@@ -105,21 +104,23 @@ body{
 }
 
 .navbar-nav li a{
-    height: 70px;
+    height: 100%;
     width: 100%;
-   padding-top: 25px;
+    padding-top: 25px;
     color: rgb(255, 255, 255) !important;
 }
 
 .nav>li>a:focus, .nav>li>a:hover{
-   color: rgb(255, 0, 0) !important;
-  // text-decoration: underline;
-border-bottom: red thin solid;
-    background-color: rgba(0, 0, 0, 0.6)  !important;
+	color: #990000 !important;
+	border-bottom: #990000 thin solid;
+	background-color: rgba(0, 0, 0, 0.6)  !important;
 }
 
-
-
+.nav>li.active>a{
+	background-color: rgba(0, 0, 0, 0.6) !important;
+	color: #990000 !important;
+	border-bottom: #FFFFFF thin solid;
+}
 
 
 
@@ -182,28 +183,23 @@ Elements
 
 
 .eventbox01{
-    border: red thin solid;
+    border: #990000 thin solid;
     float: left;
-    width: 98%;
-    padding: 10px;
-    margin: 20px;
-   
+    padding: 20px 20px 10px 10px;
+    margin: 0.8rem 0 2rem;
+    width:100%;
+    min-height: 10rem;
 }
 
-.event_star{
-    float: right;
-    width: 100%;
+.eventbox01::after {
+  content: '★';
+  position: absolute;
+  top:-2.1rem;
+  right:-1rem;
+  font-size:5rem;
+  color: #990000;
 }
 
-
-
-.event_star .estrellita{
-    position: relative;
-   top:-35px;
-   right: -40px;
-    float: right;
-    width: 60px;
-}
 
 .event_title{
     font-size: 1.5em;
@@ -371,26 +367,27 @@ Elements
 
 
 .footbut{
-    background-color: rgba(0, 0, 0, 0.6)  !important;
-    float: right;
- //  position: absolute;
-   right: 0px;
- //bottom: 15px;
- //  z-index: 30;
-   width: 100%;
-   text-align: center;
-   
+	margin-top:10px;
+	margin-right:10px;
+	padding-right:10px;
 } 
 
 .footbut a{
     margin-left: 20px;
-    color: rgba(255, 20, 20, 1) ;
 }
 
 .rr_box_02 h3{
     color: rgba(255, 20, 20, 1) ;
     font-size: 16px;
     font-weight: bold;
+}
+
+a.nolink {
+	color:#FFFFFF;
+}
+a.nolink:hover, a.nolink:focus {
+	text-decoration:none;
+	color: #FFFFFF;
 }
 
 
@@ -502,16 +499,6 @@ h4 {
     width:100%;
    padding: 0px;
  
-}
-
-.footbut{
-    float: right;
-   position: absolute;
-   right: 0px;
-   bottom: 10px;
-   z-index: 30;
-   width: 200px;
-   
 }
 
 .footer {

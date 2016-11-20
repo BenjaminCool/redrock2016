@@ -2,6 +2,7 @@
 /* 
     Author     : Victor Reyes
     victor@inblackbird.com
+    Edited By: Benjamin Cool
 */
 
 html {
@@ -50,7 +51,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90%;
+//    width: 90%;
     height: 300px;
     background-color: rgba(0, 0, 0, 0.8);
     color: #fff;
@@ -104,25 +105,36 @@ body{
 }
 
 .navbar-nav li a{
-    height: 100%;
+    height: 60px;
     width: 100%;
     padding-top: 25px;
     color: rgb(255, 255, 255) !important;
 }
 
 .nav>li>a:focus, .nav>li>a:hover{
-	color: #990000 !important;
-	border-bottom: #990000 thin solid;
-	background-color: rgba(0, 0, 0, 0.6)  !important;
+	color: #AA0000 !important;
+	border-bottom: #AA0000 thin solid;
+	//background-color: rgba(0, 0, 0, 0.6)  !important;
 }
 
 .nav>li.active>a{
-	background-color: rgba(0, 0, 0, 0.6) !important;
-	color: #990000 !important;
-	border-bottom: #FFFFFF thin solid;
+	background-color: transparent !important; //rgba(0, 0, 0, 0.6) !important;
+	color: #AA0000 !important;
+	border-bottom: #DDDDDD thin solid;
 }
 
 
+@media only screen and (min-width : 768px){
+	.rr-menu-item {
+		min-height:15rem;
+	}
+}
+
+
+
+.center {
+	text-align: center;
+}
 
 /*end basics*/
 
@@ -183,7 +195,7 @@ Elements
 
 
 .eventbox01{
-    border: #990000 thin solid;
+    border: #AA0000 thin solid;
     float: left;
     padding: 20px 20px 10px 10px;
     margin: 0.8rem 0 2rem;
@@ -197,7 +209,7 @@ Elements
   top:-2.1rem;
   right:-1rem;
   font-size:5rem;
-  color: #990000;
+  color: #AA0000;
 }
 
 
@@ -220,7 +232,7 @@ Elements
 
 
 .beerbox01{
-    border: red thin solid;
+    border: #AA0000 thin solid;
     //float: left;
     width: 70%;
     padding: 10px;
@@ -238,7 +250,7 @@ Elements
 }
 
 .beer_img img{
-    border: red thin solid;
+    border: #AA0000 thin solid;
     margin-left: auto;
     margin-right: auto;
    margin-top: 10px;
@@ -277,7 +289,7 @@ Elements
 
 
 .buttonbox01{
-    border: red thin solid;
+    border: #AA0000 thin solid;
     float: left;
     width: 98%;
     padding: 10px;
@@ -377,7 +389,7 @@ Elements
 }
 
 .rr_box_02 h3{
-    color: rgba(255, 20, 20, 1) ;
+    color: #AA0000 ;
     font-size: 16px;
     font-weight: bold;
 }
@@ -394,12 +406,13 @@ a.nolink:hover, a.nolink:focus {
 /*general form*/
 
 .rounded3 iframe{
-    border: red thin solid !important;
+    border: #AA0000 thin solid !important;
 }
 
 h4 {
     padding-top: 10px;
 }
+
 
 
 
@@ -562,8 +575,6 @@ h4 {
 
 
 
-
-
 	}
         
         /* Large Devices, Wide Screens */
@@ -584,4 +595,10 @@ h4 {
 }
 	}
         
+
+#menu_widget table.beermenu td {
+
+  color: #CCCCCC;
+
+}
         

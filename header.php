@@ -18,6 +18,10 @@
 <?php 
   $mods = get_theme_mods();
   $home_url = esc_url(home_url('/'));
+  
+ $background_id = rand(1,5);
+ $background_image = $mods["image-{$background_id}"];
+ 
 ?>
 
 
@@ -28,6 +32,18 @@
 
 
 			<?php
+				$theme_folder = get_stylesheet_directory_uri();
+				echo "
+					<style type=\"text/css\">
+						body {
+							background: url({$theme_folder}/img/back/img_back_black.svg) center center no-repeat fixed, url({$background_image}) center center no-repeat fixed;
+							background-size: cover;
+					    line-height: 1.12;
+						}
+					</style>
+				
+				";
+				
 				if( isset($mods['global-banner']) && $mods['global-banner'] != "") {
 					echo "
 							<div>

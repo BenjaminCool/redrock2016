@@ -66,7 +66,7 @@ HTML;
 						
 					echo<<<HTML
 					
-					<div class="col-xs-4">
+					<div class="col-sm-4">
 						<div class="eventbox01">
 							<div class="event_title"><a href="{$link}" rel="bookmark" title="{$name}">{$name}</a></div>
 							<div class="event_date">{$date}</div>

@@ -41,20 +41,8 @@ if ( $wp_query->have_posts() ) {
 <div class="row">
   <div class="col-sm-8 col-sm-offset-2">             
 		<div class="rr_box_02 container-fluid">
-      			<nav class="navbar navbar-inverse bg ">
-        			<div class="container-fluid">
-          				<div class="navbar-header">
-             					<a class="navbar-brand" href="/menu/">Menu</a>
-    					</div>
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar2" aria-expanded="false" aria-controls="navbar">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>   
-        			</div>
-          
-				<?php
+				<nav class="navbar navbar-inverse bg ">
+      	<?php
 				
 					wp_nav_menu(
 						array(
@@ -67,6 +55,21 @@ if ( $wp_query->have_posts() ) {
 					);
 				
 				?>
+      	
+      			
+        			<div class="container-fluid">
+          				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar2" aria-expanded="false" aria-controls="navbar">
+										<span class="sr-only">Toggle navigation</span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+									</button>
+          				<div class="navbar-header">
+             					<a class="navbar-brand"><?php echo ucwords($menu_type); ?> Menu</a>
+    							</div>
+        			</div>
+          
+				
             
               
         <div class="col-sm-12">
@@ -76,21 +79,13 @@ if ( $wp_query->have_posts() ) {
 					<?php
 				
 						foreach($menu_items as $i=>$menu_item){
-							if($i%3 == 0){
-								if($i != 0){
-									echo '</div>';
-								}
-								echo '<div class="row">';
-							}
-							echo "
-								
-								<div class=\"col-xs-4\">
+							echo "	
+								<div class=\"col-sm-6 col-md-4 rr-menu-item\">
 											<h3>{$menu_item['name']}</h3>
 											<p>{$menu_item['content']}</p>
 								</div>									
 							";
 						}
-						echo '</div>';
 					?>             
 				</div><!--/.col-sm-12 -->
 			</div><!--/.container-fluid -->

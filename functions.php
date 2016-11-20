@@ -27,6 +27,11 @@ class RedRockStyle {
      		if( $item->url == home_url().$_SERVER['REQUEST_URI'] ){
              		$classes[] = 'active ';
      		}
+     		
+     		if($item->title == 'Menu' && strpos($_SERVER['REQUEST_URI'],'menu') !== false){
+     			$classes[] = 'active ';
+     		}
+     		
      return $classes;
 	}
   
@@ -83,15 +88,28 @@ class RedRockStyle {
   
     $this->add_page_to_customizer($wp_customize,'Main Footer Link');
 
+
+		$wp_customize->add_section( 'background-images' , array(
+      'title'      => __( 'Background Images', 'background-images' ),
+      'priority'   => 10,
+    ) );
+    
+    $this->add_image_to_customizer($wp_customize,'Image 1', 'background-images');
+    $this->add_image_to_customizer($wp_customize,'Image 2', 'background-images');
+    $this->add_image_to_customizer($wp_customize,'Image 3', 'background-images');
+    $this->add_image_to_customizer($wp_customize,'Image 4', 'background-images');
+    $this->add_image_to_customizer($wp_customize,'Image 5', 'background-images');
+
     register_nav_menus( 
     	array(
-				'footer_menu' => 'Footer Menu',
-				'menu_menu' => 'Menu Menu'
+				'footer_menu' => 'Footer Nav',
+				'menu_menu' => 'Menu Nav',
+				'full_menu_menu' => 'Full Menu Nav'
 			)
 		);
   }
 
-	function add_image_to_customizer($wp_customize,$setting_name, $default = "") {
+	function add_image_to_customizer($wp_customize,$setting_name, $section = 'red-rock', $default = "") {
 		$slug = sanitize_title($setting_name);
 		$wp_customize->add_setting($slug, 
 			array(
@@ -101,13 +119,13 @@ class RedRockStyle {
 		);
 		$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, "{$slug}-setting", array(
 					'label'    => __($setting_name, 'red-rock-2016'),
-					'section'  => 'red-rock',
+					'section'  => $section,
 					'settings' => $slug,
 		)));
 		$wp_customize->get_setting($slug)->transport = 'postMessage';
 	}
 	
-	function add_text_to_customizer($wp_customize,$setting_name, $default = "") {
+	function add_text_to_customizer($wp_customize,$setting_name, $section = 'red-rock', $default = "") {
 		$slug = sanitize_title($setting_name);
 		$wp_customize->add_setting($slug, 
 			array(
@@ -117,7 +135,7 @@ class RedRockStyle {
 		);
 		$wp_customize->add_control( new WP_Customize_Control($wp_customize, "{$slug}-setting", array(
 					'label'    => __($setting_name, 'red-rock-2016'),
-					'section'  => 'red-rock',
+					'section'  => $section,
 					'settings' => $slug,
 		)));
 
@@ -125,7 +143,7 @@ class RedRockStyle {
 	}
 
 
-	function add_page_to_customizer($wp_customize, $setting_name, $default = ""){
+	function add_page_to_customizer($wp_customize, $setting_name, $section = 'red-rock', $default = ""){
 		$slug = sanitize_title($setting_name);
 		$wp_customize->add_setting($slug,
                         array(
@@ -135,7 +153,7 @@ class RedRockStyle {
                 );
 		$wp_customize->add_control('themename_page_test', array(
         		'label'      => __($setting_name, 'red-rock-2016'),
-        		'section'    => 'red-rock',
+        		'section'    => $section,
         		'type'    => 'dropdown-pages',
         		'settings'   => $slug,
     		));

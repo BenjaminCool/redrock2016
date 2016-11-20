@@ -114,32 +114,19 @@ body{
 .nav>li>a:focus, .nav>li>a:hover{
 	color: #AA0000 !important;
 	border-bottom: #AA0000 thin solid;
-	//background-color: rgba(0, 0, 0, 0.6)  !important;
+	background-color: rgba(0, 0, 0, 0.6)  !important;
 }
 
 .nav>li.active>a{
-	background-color: transparent !important; //rgba(0, 0, 0, 0.6) !important;
+	background-color: rgba(0, 0, 0, 0.6) !important;
 	color: #AA0000 !important;
-	border-bottom: #DDDDDD thin solid;
+	border-bottom: #FFFFFF thin solid;
+
 }
-
-
-@media only screen and (min-width : 768px){
-	.rr-menu-item {
-		min-height:15rem;
-	}
-}
-
-
 
 .center {
 	text-align: center;
 }
-
-/*end basics*/
-
-
-/*more*/
 
 .rr_box_01 span{
     width: 100%;

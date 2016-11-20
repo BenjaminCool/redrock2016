@@ -164,7 +164,146 @@ class RedRockStyle {
 	}
 
 
+	function get_r3_menu(){
+
+		
+
+	}
+
 }
+
+
+class R3 {
+
+	function __construct($id){
+		$this->id = $id;
+	}
+
+	function fetch_menu(){
+		
+		$request_json = "{
+			'include':[
+				{
+					'relation':'subsections',
+					'scope':{
+						'include':[
+							{
+								'relation':'items',
+								'scope':{
+									'include':[
+										{
+											'relation':'prices'
+										},
+										{
+											'relation':'tags'
+										}
+									],
+									'where':{
+										'deleted':false,
+										'active':true
+									},
+									'order':[
+										'position ASC'
+									]
+								}
+							},
+							{
+								'relation':'section',
+								'scope':{
+									'fields':['organizationId'],
+									'where':{'deleted':false,'active':true},
+									'order':['position ASC']
+								}
+							},
+							{
+								'relation':'featuredItems',
+								'scope':{
+									'include':{
+										'relation':'item',
+										'scope':{'where':{'deleted':false,'active':true}}
+									}
+								}
+							}
+						],
+						'where':{'deleted':false,'active':true},
+						'order':['position ASC']
+					}
+				},
+				{
+					'relation':'featuredItems',
+					'scope':{
+						'include':{
+							'relation':'item',
+							'scope':{'where':{'deleted':false,'active':true}}
+						}
+					}
+				}
+			],
+			'where':{
+				'organizationId':'{$id}',
+				'deleted':false,
+				'active':true
+			},
+			'order':['position ASC']
+		}";
+
+
+		$query_string = urlencode($request_json);
+
+		list($menu_content, $menu_response_info)   = RedRockUtils::get_url("https://api.restaurant-logic.com/api/MenuSections?filter={$query_string}");
+
+		if($menu_response_info['HTTP_CODE'] == 200){
+			return json_decode($menu_content);
+		}	
+		else{
+			return false;
+		}
+
+	}
+
+}
+
+
+CLASS RedRockUtils {
+
+	static function get_url( $url,  $javascript_loop = 0, $timeout = 5 )
+	{
+    		$url = str_replace( "&amp;", "&", urldecode(trim($url)) );
+
+    		$cookie = tempnam ("/tmp", "CURLCOOKIE");
+    		$ch = curl_init();
+    		curl_setopt( $ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 5.1; rv:1.7.3) Gecko/20041001 Firefox/0.10.1" );
+    		curl_setopt( $ch, CURLOPT_URL, $url );
+    		curl_setopt( $ch, CURLOPT_COOKIEJAR, $cookie );
+    		curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, true );
+    		curl_setopt( $ch, CURLOPT_ENCODING, "" );
+    		curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
+    		curl_setopt( $ch, CURLOPT_AUTOREFERER, true );
+    		curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, false );    # required for https urls
+    		curl_setopt( $ch, CURLOPT_CONNECTTIMEOUT, $timeout );
+    		curl_setopt( $ch, CURLOPT_TIMEOUT, $timeout );
+    		curl_setopt( $ch, CURLOPT_MAXREDIRS, 10 );
+    		$content = curl_exec( $ch );
+    		$response = curl_getinfo( $ch );
+    		curl_close ( $ch );
+
+    		if ($response['http_code'] == 301 || $response['http_code'] == 302){
+        		ini_set("user_agent", "Mozilla/5.0 (Windows; U; Windows NT 5.1; rv:1.7.3) Gecko/20041001 Firefox/0.10.1");
+        		if ( $headers = get_headers($response['url']) ) {
+            			foreach( $headers as $value ) {
+                			if ( substr( strtolower($value), 0, 9 ) == "location:" ) {
+                    				return get_url( trim( substr( $value, 9, strlen($value) ) ) );
+					}
+            			}
+        		}
+    		}
+
+		return array( $content, $response );
+	}
+
+
+}
+
 
 $red_rock_style = new RedRockStyle();
 
